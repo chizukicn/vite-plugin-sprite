@@ -103,7 +103,7 @@ export function createSprite2CssPlugin(options: Sprite2CssPluginOptions): Plugin
           if (includes?.length && !isMatch(file, ...includes)) {
             continue;
           }
-          const filePath = path.join(source, file);
+          const filePath = path.join(f, file);
           const stat = fs.statSync(filePath);
           if (stat.isDirectory()) {
             loadDir(filePath);
