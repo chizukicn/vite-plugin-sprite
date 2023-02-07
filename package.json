@@ -1,0 +1,48 @@
+{
+  "name": "@curev/vite-plugin-sprite",
+  "version": "0.0.1",
+  "description": "",
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "postinstall": "husky install",
+    "stub": "unbuild --stub",
+    "build": "unbuild",
+    "lint": "eslint . --ext .js,.ts",
+    "bump": "pnpm install && pnpm build && bumpp package.json --commit --push --tag"
+  },
+  "keywords": [],
+  "author": "chizuki",
+  "license": "MIT",
+  "devDependencies": {
+    "@curev/eslint-config": "^0.0.6",
+    "@types/fs-extra": "^11.0.1",
+    "@types/node": "^18.11.14",
+    "@types/spritesmith": "^3.4.1",
+    "bumpp": "^8.2.1",
+    "eslint": "^8.29.0",
+    "husky": "^8.0.2",
+    "lint-staged": "^13.1.0",
+    "maybe-types": "^0.0.3",
+    "prettier": "^2.8.1",
+    "typescript": "^4.9.4",
+    "unbuild": "^1.0.2",
+    "vite": "^4.0.1"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "prettier --write",
+      "eslint --fix"
+    ]
+  },
+  "dependencies": {
+    "fs-extra": "^11.1.0",
+    "minimatch": "^6.1.6",
+    "spritesmith": "^3.4.1"
+  }
+}
